@@ -185,29 +185,3 @@ Results logged
 
 Extent Report generated
 
-🧩 Configuration Files
-pom.xml
-
-Dependency management
-
-Plugins for TestNG & reporting
-
-testng.xml
-
-Controls:
-
-Test execution order
-
-Parallel execution (if enabled)
-
-Listener binding
-
-![License](https://img.shields.io/badge/license-MIT-green) ![Version](https://img.shields.io/badge/version-1.0.0-blue) ![Language](https://img.shields.io/badge/language-HTML-yellow) ![GitHub](https://img.shields.io/badge/GitHub-subeshf/Lumio_Assigment-black?logo=github) ![Build Status](https://img.shields.io/github/actions/workflow/status/subeshf/Lumio_Assigment/ci.yml?branch=main)
-
-## ℹ️ Project Information
-
-- **👤 Author:** subeshf
-- **📦 Version:** 1.0.0
-- **📄 License:** MIT
-- **📂 Repository:** [https://github.com/subeshf/Lumio_Assigment](https://github.com/subeshf/Lumio_Assigment)
-
