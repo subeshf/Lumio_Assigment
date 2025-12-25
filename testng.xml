@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="7" name="Test"  >
     <classes>
-      <class name="exam2.LumioTestcase"/>
+      <class name="exam2.LumioTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
