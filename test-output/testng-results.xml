@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="8" passed="6" failed="2" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-12-25T17:30:36 IST" name="Default suite" finished-at="2025-12-25T17:33:42 IST" duration-ms="185739">
+    <groups>
+    </groups>
+    <test started-at="2025-12-25T17:30:36 IST" name="Default test" finished-at="2025-12-25T17:33:42 IST" duration-ms="185739">
+      <class name="exam2.LumioTestcase">
+        <test-method is-config="true" signature="setupMetrics()[pri:0, instance:exam2.LumioTestcase@55dfebeb]" started-at="2025-12-25T17:30:36 IST" name="setupMetrics" finished-at="2025-12-25T17:30:36 IST" duration-ms="12" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupMetrics -->
+        <test-method signature="TC_01_OpenBrowser()[pri:1, instance:exam2.LumioTestcase@55dfebeb]" started-at="2025-12-25T17:30:36 IST" name="TC_01_OpenBrowser" finished-at="2025-12-25T17:30:38 IST" duration-ms="2495" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_01_OpenBrowser -->
+        <test-method signature="TC_02_VerifyTitle()[pri:2, instance:exam2.LumioTestcase@55dfebeb]" started-at="2025-12-25T17:30:38 IST" name="TC_02_VerifyTitle" finished-at="2025-12-25T17:30:38 IST" duration-ms="17" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_02_VerifyTitle -->
+        <test-method signature="TC_03_OpenCalendarAndGoToOctober()[pri:3, instance:exam2.LumioTestcase@55dfebeb]" started-at="2025-12-25T17:30:38 IST" name="TC_03_OpenCalendarAndGoToOctober" finished-at="2025-12-25T17:30:39 IST" duration-ms="627" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_03_OpenCalendarAndGoToOctober -->
+        <test-method signature="TC_04_ValidateWeeklyContentTillEnd()[pri:4, instance:exam2.LumioTestcase@55dfebeb]" started-at="2025-12-25T17:30:39 IST" name="TC_04_ValidateWeeklyContentTillEnd" finished-at="2025-12-25T17:30:50 IST" duration-ms="10886" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (0466858c28a6b21496db8fa094d727c3)] -> xpath: //tbody/tr[2]/td[1]//button] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\subes\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58528}, goog:processID: 20464, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58528/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0466858c28a6b21496db8fa094d727c3]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (0466858c28a6b21496db8fa094d727c3)] -> xpath: //tbody/tr[2]/td[1]//button] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.38.0', revision: '6b412e825c*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\subes\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58528}, goog:processID: 20464, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58528/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0466858c28a6b21496db8fa094d727c3
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at exam2.LumioTestcase.changeWeek(LumioTestcase.java:908)
+at exam2.LumioTestcase.TC_04_ValidateWeeklyContentTillEnd(LumioTestcase.java:128)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_04_ValidateWeeklyContentTillEnd -->
+        <test-method signature="TC_05_ValidateProviders()[pri:5, instance:exam2.LumioTestcase@55dfebeb]" started-at="2025-12-25T17:30:50 IST" name="TC_05_ValidateProviders" finished-at="2025-12-25T17:30:51 IST" duration-ms="886" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_05_ValidateProviders -->
+        <test-method signature="TC_006_ValidatePast3WeekContentProvider()[pri:6, instance:exam2.LumioTestcase@55dfebeb]" started-at="2025-12-25T17:30:51 IST" name="TC_006_ValidatePast3WeekContentProvider" finished-at="2025-12-25T17:31:01 IST" duration-ms="9679" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_006_ValidatePast3WeekContentProvider -->
+        <test-method signature="Tc_007_ValidatecontentProvider()[pri:7, instance:exam2.LumioTestcase@55dfebeb]" started-at="2025-12-25T17:31:01 IST" name="Tc_007_ValidatecontentProvider" finished-at="2025-12-25T17:33:40 IST" duration-ms="158930" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+Title mismatch for movie index 0 | Expected: Final Destination: Bloodlines | Found: Final Destination Bloodlines,
+'Play Trailer' button not found for: War 2,
+Movie index 0 (War 2) - Play Trailer validation failed]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+Title mismatch for movie index 0 | Expected: Final Destination: Bloodlines | Found: Final Destination Bloodlines,
+'Play Trailer' button not found for: War 2,
+Movie index 0 (War 2) - Play Trailer validation failed
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+at exam2.LumioTestcase.Tc_007_ValidatecontentProvider(LumioTestcase.java:300)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Tc_007_ValidatecontentProvider -->
+        <test-method signature="TC_08_PageRefreshStability()[pri:8, instance:exam2.LumioTestcase@55dfebeb]" started-at="2025-12-25T17:33:41 IST" name="TC_08_PageRefreshStability" finished-at="2025-12-25T17:33:41 IST" duration-ms="564" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_08_PageRefreshStability -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:exam2.LumioTestcase@55dfebeb]" started-at="2025-12-25T17:33:41 IST" name="tearDown" finished-at="2025-12-25T17:33:42 IST" duration-ms="397" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="printExecutionSummary()[pri:0, instance:exam2.LumioTestcase@55dfebeb]" started-at="2025-12-25T17:33:42 IST" name="printExecutionSummary" finished-at="2025-12-25T17:33:42 IST" duration-ms="15" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- printExecutionSummary -->
+      </class> <!-- exam2.LumioTestcase -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
