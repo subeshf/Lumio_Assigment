@@ -28,8 +28,8 @@ public class TestListener implements ITestListener {
         test.get().fail(result.getThrowable());
 
         try {
-            LumioTestcase testInstance =
-                    (LumioTestcase) result.getInstance();
+            LumioTest testInstance =
+                    (LumioTest) result.getInstance();
 
             String screenshotPath =
                     testInstance.takeScreenshot(
