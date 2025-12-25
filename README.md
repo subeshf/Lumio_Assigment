@@ -15,7 +15,6 @@ Maven 3.6+
 
 Chrome Browser
 
-ChromeDriver (matching Chrome version)
 
 Run with Maven
 mvn clean test
