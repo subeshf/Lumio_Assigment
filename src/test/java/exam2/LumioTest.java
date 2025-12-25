@@ -415,6 +415,8 @@ public void printExecutionSummaryinExtentreport() {
     extent.flush();
 }
     
+
+	
     
     public String takeScreenshot(String testName) {
         try {
@@ -557,7 +559,7 @@ public void contentValidation(int j, SoftAssert soft) {
         
          if(disText.isBlank()||disText.isBlank())
          {
-        	 soft.assertTrue(false, "Discription is not Missing for  "+movieTitle);
+        	 soft.assertTrue(false, "Discription is  Missing for  "+movieTitle);
         	  MetricsCollector.MissingDiscription++;
         	  takeScreenshot("Movie_" + sanitizeFileName(title) + "_WatchOnFailed");
         	  soft.fail("Discription is  Missing for "+movieTitle);
@@ -632,6 +634,8 @@ public void contentValidation(int j, SoftAssert soft) {
         }
     }
 }
+
+
 
 // Helper method to sanitize file names
 private String sanitizeFileName(String fileName) {
