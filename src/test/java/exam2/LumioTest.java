@@ -401,7 +401,7 @@ public void printExecutionSummaryinExtentreport() {
     summaryTest.info("Unique Movies with 'Trailer': " + MetricsCollector.moviesValidatedWithTrailer.size());
     summaryTest.info("Movies: " + MetricsCollector.moviesValidatedWithTrailer);
     summaryTest.info("Provider Pages Opened: " + MetricsCollector.providerPagesOpened.size());
-
+    summaryTest.info("Total Issues Found: " + MetricsCollector.MissingDiscription);
     summaryTest.info("⚠️ Issues Summary");
     summaryTest.info("Total Issues Found: " + MetricsCollector.issuesFound);
 
@@ -559,6 +559,7 @@ public void contentValidation(int j, SoftAssert soft) {
          {
         	 soft.assertTrue(false, "Discription is not Missing for  "+movieTitle);
         	  MetricsCollector.MissingDiscription++;
+        	  takeScreenshot("Movie_" + sanitizeFileName(title) + "_WatchOnFailed");
         	  soft.fail("Discription is not Missing for "+movieTitle);
          }
          else {
