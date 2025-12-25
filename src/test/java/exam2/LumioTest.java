@@ -560,7 +560,7 @@ public void contentValidation(int j, SoftAssert soft) {
         	 soft.assertTrue(false, "Discription is not Missing for  "+movieTitle);
         	  MetricsCollector.MissingDiscription++;
         	  takeScreenshot("Movie_" + sanitizeFileName(title) + "_WatchOnFailed");
-        	  soft.fail("Discription is not Missing for "+movieTitle);
+        	  soft.fail("Discription is  Missing for "+movieTitle);
          }
          else {
         	 soft.assertTrue(true, "Discription is  "+ disText);
