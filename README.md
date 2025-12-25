@@ -1,12 +1,44 @@
-# Lumio_Assigment
-
-> Lumio_Assigment
+Lumio_Assigment
 
 🚀 Java Selenium Automation Framework using TestNG & Extent Reports
 
-This project is a Java-based test automation framework built using Selenium WebDriver, TestNG, Maven, and Extent Reports.
-It is designed to automate UI validation, collect execution metrics, generate rich HTML reports, and capture screenshots for failures.
+Lumio_Assigment is a Java-based UI test automation framework built with Selenium WebDriver, TestNG, Maven, and Extent Reports.
+It is designed to automate UI validations, collect execution metrics, generate rich HTML reports, and capture screenshots on failures.
 
+✨ Key Features
+
+✅ Automated UI test execution
+
+📊 Execution metrics tracking:
+
+Weeks tested
+
+Providers validated
+
+Total titles verified
+
+Watch / Trailer validation
+
+Issues found
+
+📸 Automatic screenshots on failure
+
+🧾 Rich Extent HTML report generation
+
+🪵 Centralized logging using Log4j2
+
+🧪 Soft assertions support
+
+🔁 Stable execution with waits & retry-safe logic
+
+🛠️ Tech Stack
+Tool / Technology	Purpose
+Java	Programming language
+Selenium WebDriver	Browser automation
+TestNG	Test execution & assertions
+Maven	Build & dependency management
+Extent Reports	HTML reporting
+Log4j2	Logging framework
 📂 Project Structure
 Lumio_Assigment
 │
@@ -41,50 +73,16 @@ Lumio_Assigment
 ├── pom.xml
 └── testng.xml
 
-🛠️ Tech Stack
-Tool / Technology	Purpose
-Java	Programming language
-Selenium WebDriver	Browser automation
-TestNG	Test execution & assertions
-Maven	Build & dependency management
-Extent Reports	HTML reporting
-Log4j2	Logging framework
-✨ Key Features
-
-✅ Automated UI test execution
-
-📊 Execution metrics tracking
-
-Weeks tested
-
-Providers validated
-
-Total titles verified
-
-Watch / Trailer validation
-
-Issues found
-
-📸 Automatic screenshots on failure
-
-🧾 Extent HTML Report generation
-
-🪵 Centralized logging using Log4j2
-
-🧪 Soft assertions support
-
-🔁 Stable execution with waits & retry-safe logic
-
 📄 Important Classes Explained
-LumioTestcases.java
+🔹 LumioTestcases.java
 
 Main test class
 
 Contains UI automation logic
 
-Executes validations and updates metrics
+Executes validations and updates execution metrics
 
-MetricsCollector.java
+🔹 MetricsCollector.java
 
 Central place to track:
 
@@ -96,23 +94,23 @@ Issues found
 
 Titles verified
 
-ExtentManager.java
+🔹 ExtentManager.java
 
 Creates and manages the Extent Report instance
 
-Ensures single report generation per run
+Ensures a single report is generated per execution
 
-TestListener.java
+🔹 TestListener.java
 
 Implements ITestListener
 
 Captures:
 
-Test pass / fail status
+Test pass/fail status
 
 Screenshots on failure
 
-Logs into Extent Report
+Logs results into Extent Reports
 
 ▶️ How to Run the Tests
 1️⃣ Prerequisites
@@ -121,9 +119,9 @@ Java JDK 11 or higher
 
 Apache Maven 3.6+
 
-Chrome Browser
+Google Chrome browser
 
-ChromeDriver (matching browser version)
+ChromeDriver (matching Chrome version)
 
 2️⃣ Clone the Repository
 git clone https://github.com/subeshf/Lumio_Assigment.git
@@ -134,7 +132,7 @@ mvn clean test
 
 4️⃣ Run Using TestNG XML
 
-You can also run directly using:
+You can also run tests directly using:
 
 testng.xml
 
@@ -149,7 +147,7 @@ Location:
 reports/extent-report.html
 
 
-Open in browser after execution
+Open in a browser after execution
 
 📸 Screenshots
 
@@ -171,17 +169,21 @@ Controlled via log4j2.xml
 
 🧪 Test Execution Flow
 
-Test starts
+Test execution starts
 
 Browser launches
 
 UI actions & validations performed
 
-Metrics collected
+Execution metrics collected
 
 Screenshots captured on failure
 
 Results logged
 
-Extent Report generated
+Extent HTML report generated
 
+✅ Summary
+
+This framework provides a scalable, maintainable, and reporting-rich automation solution for UI testing using Java Selenium.
+It is ideal for validating complex UI flows while capturing meaningful metrics and insights in professional reports.
