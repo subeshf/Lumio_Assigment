@@ -48,11 +48,13 @@ public class LumioTest {
         log.info("Launching Chrome browser");
 
         ChromeOptions option = new ChromeOptions();
-       
+        option.addArguments("--headless=new"); 
+        option.addArguments("--window-size=1920,1080");
+        option.addArguments("--start-maximized");
       
         driver = new ChromeDriver(option);
 
-        driver.manage().window().maximize();
+       // driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         driver.get("https://tldr.lumiolabs.ai/");
@@ -236,7 +238,7 @@ public class LumioTest {
     
   
 
-@Test(priority=7, enabled=true)
+@Test(priority=7, enabled=false)
 public void Tc_007_ValidatecontentProvider() {
     soft = new SoftAssert();
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -335,15 +337,7 @@ public void printExecutionSummary() {
     System.out.println("Total Week Checks for Provider Content: " + MetricsCollector.totalWeekCheckforProviderContent);
     System.out.println("Total Movies in Provider Check: " + MetricsCollector.totalMoviesProvider);
     
-    System.out.println("\n========== Watch On & Trailer Validation (TC_007) ==========");
-    System.out.println("'Watch On' Buttons Successfully Validated: " + MetricsCollector.watchOnButtonsValidated);
-    System.out.println("'Play Trailer' Buttons Successfully Validated: " + MetricsCollector.trailerButtonsValidated);
-    System.out.println("Unique Movies with 'Watch On' Validated: " + MetricsCollector.moviesValidatedWithWatchOn.size());
-    System.out.println("Movies: " + MetricsCollector.moviesValidatedWithWatchOn);
-    System.out.println("Unique Movies with 'Trailer' Validated: " + MetricsCollector.moviesValidatedWithTrailer.size());
-    System.out.println("Movies: " + MetricsCollector.moviesValidatedWithTrailer);
-    System.out.println("Provider Pages Opened: " + MetricsCollector.providerPagesOpened.size());
-
+    
     System.out.println("\n========== Issues Summary ==========");
     System.out.println("Total Issues Found: " + MetricsCollector.issuesFound);
 
@@ -375,7 +369,7 @@ public void printExecutionSummary() {
     
     
 
-public void printExecutionSummaryinExtentreport() {
+public void  printExecutionSummaryinExtentreport() {
 
     ExtentReports extent = ExtentManager.getExtent();
     ExtentTest summaryTest = extent.createTest("📊 Final Execution Summary");
@@ -393,20 +387,18 @@ public void printExecutionSummaryinExtentreport() {
     summaryTest.info("Total Week Checks: " + MetricsCollector.totalWeekCheckforProviderContent);
     summaryTest.info("Total Movies in Provider Check: " + MetricsCollector.totalMoviesProvider);
 
-    summaryTest.info("▶️ Watch On & Trailer Validation (TC_007)");
-    summaryTest.info("'Watch On' Buttons Validated: " + MetricsCollector.watchOnButtonsValidated);
-    summaryTest.info("'Play Trailer' Buttons Validated: " + MetricsCollector.trailerButtonsValidated);
-    summaryTest.info("Unique Movies with 'Watch On': " + MetricsCollector.moviesValidatedWithWatchOn.size());
-    summaryTest.info("Movies: " + MetricsCollector.moviesValidatedWithWatchOn);
-    summaryTest.info("Unique Movies with 'Trailer': " + MetricsCollector.moviesValidatedWithTrailer.size());
-    summaryTest.info("Movies: " + MetricsCollector.moviesValidatedWithTrailer);
-    summaryTest.info("Provider Pages Opened: " + MetricsCollector.providerPagesOpened.size());
-    summaryTest.info("Total Issues Found: " + MetricsCollector.MissingDiscription);
+
+    
     summaryTest.info("⚠️ Issues Summary");
     summaryTest.info("Total Issues Found: " + MetricsCollector.issuesFound);
-
+    if ((MetricsCollectorsSlider.issuesFound.size() > 0))
+    summaryTest.fail("Total issues found in TC_02_validate_Watch_Tailer_Button_FrontTopTenVsSlider" + MetricsCollectorsSlider.issuesFound.size() + "</pre>");
+    
     if (MetricsCollector.issues.length() > 0) {
         summaryTest.fail("❌ Issues Found:");
+        
+        
+     
         summaryTest.fail("<pre>" + MetricsCollector.issues + "</pre>");
     } else {
         summaryTest.pass("✅ No Issues Found");

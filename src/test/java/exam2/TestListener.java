@@ -28,15 +28,33 @@ public class TestListener implements ITestListener {
         test.get().fail(result.getThrowable());
 
         try {
+        	
+        	
             LumioTest testInstance =
                     (LumioTest) result.getInstance();
+            
+            Slidertest testInstance1 =
+                    (Slidertest) result.getInstance();
 
             String screenshotPath =
                     testInstance.takeScreenshot(
                             result.getMethod().getMethodName());
+            
+            
 
             if (screenshotPath != null) {
                 test.get().addScreenCaptureFromPath(screenshotPath);
+            } else {
+                test.get().warning("Screenshot path was null");
+            }
+            
+            
+            String screenshotPath1 =
+                    testInstance1.takeScreenshot(
+                            result.getMethod().getMethodName());
+
+            if (screenshotPath1 != null) {
+                test.get().addScreenCaptureFromPath(screenshotPath1);
             } else {
                 test.get().warning("Screenshot path was null");
             }
