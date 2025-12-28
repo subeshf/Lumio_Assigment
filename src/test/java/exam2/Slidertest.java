@@ -37,10 +37,10 @@ import org.testng.asserts.SoftAssert;
 
 
 @Listeners(TestListener.class)
-public class Slidertest {
+public class SliderTest {
 	
 	
-	   Logger log = LogManager.getLogger(Slidertest.class);
+	   Logger log = LogManager.getLogger(SliderTest.class);
 
     WebDriver driver;
     WebDriverWait wait;

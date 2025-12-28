@@ -33,8 +33,8 @@ public class TestListener implements ITestListener {
             LumioTest testInstance =
                     (LumioTest) result.getInstance();
             
-            Slidertest testInstance1 =
-                    (Slidertest) result.getInstance();
+            SliderTest testInstance1 =
+                    (SliderTest) result.getInstance();
 
             String screenshotPath =
                     testInstance.takeScreenshot(
