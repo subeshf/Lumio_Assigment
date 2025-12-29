@@ -232,7 +232,11 @@ public class LumioTest {
     	
     }
     
-   
+    /* =========================
+    TC_07 – Validate Watch and Trailer Button of each movies  Validation
+    ========================= */
+    
+  
 
 
 

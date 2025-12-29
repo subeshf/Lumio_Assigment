@@ -5,7 +5,7 @@
     <classes>
     
       <class name="exam2.LumioTest"/>
-        <class name="exam2.SliderTest"/>
+       <class name="exam2.SliderTest"/>
 
     </classes>
   </test> <!-- Test -->

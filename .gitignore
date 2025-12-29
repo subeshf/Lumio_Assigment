@@ -1,4 +1,15 @@
-# Ignore logs and build output
+# Maven
+target/
+
+# TestNG & Extent Reports
+test-output/
+reports/
+
+# Logs
 logs/
 *.log
-target/
+
+# Screenshots
+screenshots/failures/
+
+

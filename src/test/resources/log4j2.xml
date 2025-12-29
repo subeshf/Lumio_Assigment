@@ -1,40 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
-
-    <Appenders>
-
-        <!-- Console -->
-        <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout
-                pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
-        </Console>
-
-        <!-- Rolling File -->
-        <RollingFile
-            name="FileLogger"
-            fileName="logs/execution.log"
-            filePattern="logs/execution-%d{yyyy-MM-dd_HH-mm-ss}.log">
-
-            <PatternLayout>
-                <Pattern>
-                    %d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n
-                </Pattern>
-            </PatternLayout>
-
-            <Policies>
-                <!-- New file every test run -->
-                <OnStartupTriggeringPolicy/>
-            </Policies>
-
-        </RollingFile>
-
-    </Appenders>
-
-    <Loggers>
-        <Root level="debug">
-            <AppenderRef ref="Console"/>
-            <AppenderRef ref="FileLogger"/>
-        </Root>
-    </Loggers>
-
+<Properties>
+<Property name="LOG_DIR">logs</Property>
+<Property name="LOG_FILE">automation.log</Property>
+</Properties>
+<Appenders>
+<!--  Console  -->
+<Console name="Console" target="SYSTEM_OUT">
+<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level [%t] %c{1} - %msg%n"/>
+</Console>
+<!--  SINGLE FILE for ALL tests  -->
+<RollingFile name="FileLogger" fileName="${LOG_DIR}/${LOG_FILE}" filePattern="${LOG_DIR}/automation-%d{yyyy-MM-dd}.log.gz">
+<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level [%t] %c{1} - %msg%n"/>
+<Policies>
+<TimeBasedTriggeringPolicy interval="1"/>
+<SizeBasedTriggeringPolicy size="10MB"/>
+</Policies>
+<DefaultRolloverStrategy max="7"/>
+</RollingFile>
+</Appenders>
+<Loggers>
+<Logger name="exam2" level="info" additivity="false">
+<AppenderRef ref="Console"/>
+<AppenderRef ref="FileLogger"/>
+</Logger>
+<!--  Root fallback  -->
+<Root level="info">
+<AppenderRef ref="Console"/>
+<AppenderRef ref="FileLogger"/>
+</Root>
+</Loggers>
 </Configuration>
