@@ -90,7 +90,16 @@ public class LumioTest {
     public void TC_03_OpenCalendarAndGoToOctober() {
 
         log.info("Opening calendar");
+        
+        WebElement popUpCloseButton = wait.until(
+                ExpectedConditions.presenceOfElementLocated(
+                        By.xpath("(//div[contains(@class,'text-white')])/button")
+                )
+        );
 
+        ((JavascriptExecutor) driver)
+                .executeScript("arguments[0].click();", popUpCloseButton);           
+        
         WebElement calendarButton = driver.findElement(By.xpath("//div[contains(@class,'border-l border-[#444444] flex items-center justify-center')]"));
 		
 		JavascriptExecutor js = (JavascriptExecutor)driver;

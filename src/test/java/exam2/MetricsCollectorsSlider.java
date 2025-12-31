@@ -17,14 +17,33 @@ public class MetricsCollectorsSlider {
     private List<String> moviesWithDescriptionIssues = new ArrayList<>();
     private List<String> providerPagesOpened = new ArrayList<>();
     public static List<String> issuesFound = new ArrayList<>();
+    private List<Integer> overallCountFront = new ArrayList<>();
+    private List<Integer> overallCountSlider = new ArrayList<>();
 
     public void setTotalMoviesOnFrontPage(int count) {
         this.totalMoviesOnFrontPage = count;
+        this.overallCountFront.add(count);
+        
     }
 
     public void setTotalMoviesInSlider(int count) {
         this.totalMoviesInSlider = count;
+        this.overallCountSlider.add(count);
     }
+    
+    
+    public int getTotalFrontCount() {
+        return overallCountFront.stream()
+                .mapToInt(Integer::intValue)
+                .sum();
+    }
+
+    public int getTotalSliderCount() {
+        return overallCountSlider.stream()
+                .mapToInt(Integer::intValue)
+                .sum();
+    }
+
 
     public void incrementWatchOnValidated() {
         this.watchOnValidated++;
@@ -70,8 +89,8 @@ public class MetricsCollectorsSlider {
         System.out.println("");
         
         System.out.println("🎬 MOVIE COUNTS:");
-        System.out.println("   ➤ Total movies on front page: " + totalMoviesOnFrontPage);
-        System.out.println("   ➤ Total movies in slider: " + totalMoviesInSlider);
+        System.out.println("   ➤ Total movies on front page: " + getTotalFrontCount());
+        System.out.println("   ➤ Total movies in slider: " + getTotalSliderCount());
         System.out.println("   ➤ Movies validated: " + moviesValidated.size());
         System.out.println("");
         
