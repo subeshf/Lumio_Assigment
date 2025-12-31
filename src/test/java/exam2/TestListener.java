@@ -23,46 +23,43 @@ public class TestListener implements ITestListener {
     }
 
     @Override
-    public void onTestFailure(ITestResult result) {
+    
+public void onTestFailure(ITestResult result) {
 
-        test.get().fail(result.getThrowable());
+    test.get().fail(result.getThrowable());
 
-        try {
-        	
-        	
-            LumioTest testInstance =
-                    (LumioTest) result.getInstance();
-            
-            SliderTest testInstance1 =
-                    (SliderTest) result.getInstance();
+    try {
+        Object instance = result.getInstance();
+        String screenshotPath = null;
 
-            String screenshotPath =
-                    testInstance.takeScreenshot(
-                            result.getMethod().getMethodName());
-            
-            
+        if (instance instanceof LumioTest) {
 
-            if (screenshotPath != null) {
-                test.get().addScreenCaptureFromPath(screenshotPath);
-            } else {
-                test.get().warning("Screenshot path was null");
-            }
-            
-            
-            String screenshotPath1 =
-                    testInstance1.takeScreenshot(
-                            result.getMethod().getMethodName());
+            LumioTest testInstance = (LumioTest) instance;
+            screenshotPath = testInstance.takeScreenshot(
+                    result.getMethod().getMethodName());
 
-            if (screenshotPath1 != null) {
-                test.get().addScreenCaptureFromPath(screenshotPath1);
-            } else {
-                test.get().warning("Screenshot path was null");
-            }
+        } else if (instance instanceof SliderTest) {
 
-        } catch (Exception e) {
-            test.get().fail("Screenshot capture failed: " + e.getMessage());
+            SliderTest testInstance1 = (SliderTest) instance;
+            screenshotPath = testInstance1.takeScreenshot(
+                    result.getMethod().getMethodName());
+
+        } else {
+            test.get().warning("Unknown test class: "
+                    + instance.getClass().getName());
         }
+
+        if (screenshotPath != null) {
+            test.get().addScreenCaptureFromPath(screenshotPath);
+        } else {
+            test.get().warning("Screenshot path was null");
+        }
+
+    } catch (Exception e) {
+        test.get().fail("Screenshot capture failed: " + e.getMessage());
     }
+}
+
 
     @Override
     public void onTestSkipped(ITestResult result) {
