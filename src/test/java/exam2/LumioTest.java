@@ -48,7 +48,7 @@ public class LumioTest {
         log.info("Launching Chrome browser");
 
         ChromeOptions option = new ChromeOptions();
-        option.addArguments("--headless=new"); 
+       option.addArguments("--headless=new"); 
         option.addArguments("--window-size=1920,1080");
         option.addArguments("--start-maximized");
       
@@ -90,7 +90,16 @@ public class LumioTest {
     public void TC_03_OpenCalendarAndGoToOctober() {
 
         log.info("Opening calendar");
+        
+        WebElement popUpCloseButton = wait.until(
+                ExpectedConditions.presenceOfElementLocated(
+                        By.xpath("(//div[contains(@class,'text-white')])/button")
+                )
+        );
 
+        ((JavascriptExecutor) driver)
+                .executeScript("arguments[0].click();", popUpCloseButton);           
+        
         WebElement calendarButton = driver.findElement(By.xpath("//div[contains(@class,'border-l border-[#444444] flex items-center justify-center')]"));
 		
 		JavascriptExecutor js = (JavascriptExecutor)driver;
